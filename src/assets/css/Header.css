@@ -1,0 +1,45 @@
+.header-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 0em 1em;
+	align-items: center;
+}
+
+.header-page-info {
+	margin: 0.5em;
+	font-weight: 600;
+	text-transform: capitalize;
+}
+
+.sidebar-profile {
+	display: flex;
+	margin: 0.5em;
+	align-items: center;
+	justify-content: center;
+}
+.user-image {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	border: 2px solid coral;
+	padding: 5px;
+}
+
+.user-greetings {
+	margin-left: 0.5em;
+}
+.user-name {
+	font-weight: 700;
+}
+
+@media only screen and (max-width: 1000px) {
+	.header-page-info {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 1000px) {
+	.header-icon-holder {
+		display: none;
+	}
+}
