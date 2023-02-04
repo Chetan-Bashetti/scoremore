@@ -13,7 +13,7 @@ const Signup: React.FC = () => {
 	return (
 		<div className='auth-wrapper'>
 			<div className='auth-components'>
-				<Text className='auth-title-typography'>Welcome to Scoremore.com</Text>
+				<Text className='auth-title-typography'>Welcome to ScoreMore.com</Text>
 				<Text className='auth-sub-typography'>Register to know more</Text>
 				<Input
 					className='auth-textfield'

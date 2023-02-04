@@ -2,6 +2,11 @@
 	display: flex;
 	flex-direction: column;
 	flex: 1;
+	position: absolute;
+	z-index: 111;
+	background: white;
+	height: 100%;
+	box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 }
 
 .logo-text {
@@ -24,4 +29,19 @@
 .active {
 	background: dodgerblue;
 	font-weight: 600;
+}
+
+.sidebar-close-wrapper {
+	height: 0px;
+	position: relative;
+	left: 29px;
+	align-self: end;
+	top: 0px;
+}
+
+.close-icon {
+	background: #8d8585;
+	color: white;
+	padding: 0.1em;
+	font-size: 1.5em;
 }

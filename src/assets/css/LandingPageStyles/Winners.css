@@ -1,0 +1,98 @@
+.winners-main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2em;
+}
+.winners-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 1em;
+}
+.winner {
+	flex: 1 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1em;
+	padding: 1em;
+}
+.winner-image {
+	height: 180px;
+	width: 180px;
+	border-radius: 50%;
+	box-shadow: 0 0px 0 rgb(0 0 0 / 10%), 0 0 16px rgb(0 0 0 / 10%);
+	border: 3px solid coral;
+	padding: 5px;
+}
+.winner-image-sub {
+	height: 90px;
+	width: 90px;
+	border-radius: 50%;
+	box-shadow: 0 0px 0 rgb(0 0 0 / 10%), 0 0 16px rgb(0 0 0 / 10%);
+	border: 2px solid coral;
+	padding: 5px;
+}
+.winner-prizing {
+	display: flex;
+	flex-direction: column-reverse;
+	margin: 1em 0;
+	justify-content: space-between;
+	align-items: center;
+}
+.winner-title {
+	max-width: 200px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 500;
+}
+.winner-name {
+	font-weight: 600;
+	margin-top: 1em;
+	font-size: 0.9em;
+}
+.winner-fees {
+	color: limegreen;
+	font-weight: 600;
+	font-size: 2em;
+}
+.winner-sub {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 1em;
+	width: 100px;
+	align-items: center;
+	text-align: center;
+	padding: 1em 0;
+}
+
+.winner-name-sub {
+	font-weight: 500;
+	margin-top: 0.5em;
+	font-size: 0.8em;
+}
+.winner-fees-sub {
+	color: limegreen;
+	font-weight: 600;
+	font-size: 1em;
+}
+@media screen and (max-width: 699px) {
+	.winners-main {
+		padding: 1em;
+	}
+	.winner {
+		min-width: 250px;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.winner {
+		min-width: 350px;
+		max-width: 350px;
+	}
+}

@@ -1,0 +1,61 @@
+.exams-main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2em;
+}
+.exams-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 1em;
+}
+.exam {
+	flex: 1 1;
+	display: flex;
+	flex-direction: column;
+	margin: 1em;
+	padding: 1em;
+	box-shadow: 0 0px 0 rgb(0 0 0 / 10%), 0 0 16px rgb(0 0 0 / 10%);
+}
+.exam-image {
+	height: 180px;
+	width: 100%;
+}
+.exam-prizing {
+	display: flex;
+	margin: 1em 0;
+	justify-content: space-between;
+}
+.exam-desc {
+	margin: 1em 0;
+}
+.exam-title {
+	max-width: 200px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 500;
+}
+
+.exam-fees {
+	color: limegreen;
+	font-weight: 600;
+}
+@media screen and (max-width: 699px) {
+	.exams-main {
+		padding: 1em;
+	}
+	.exam {
+		min-width: 250px;
+	}
+}
+
+@media screen and (min-width: 700px) {
+	.exam {
+		min-width: 350px;
+		max-width: 350px;
+	}
+}

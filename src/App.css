@@ -9,13 +9,13 @@ body {
 	width: 100%;
 	--main-primary-color: coral;
 	--main-secondary-color: coral;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .App {
 	display: flex;
 	height: 100%;
 	width: 100%;
-	font-family: 'Lato', sans-serif;
 }
 
 .App-logo {

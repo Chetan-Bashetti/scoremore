@@ -16,11 +16,48 @@ const Home = () => {
 		<React.Suspense fallback={<Loading />}>
 			<div className='home-wrapper'>
 				<div className='sidebar-wrapper'>
-					<Sidebar />
+					<Sidebar
+						routes={[
+							{
+								text: 'Dashboard',
+								pathName: '/auth',
+								link: '/auth'
+							},
+							{
+								text: 'Login',
+								pathName: '/login',
+								link: 'login'
+							},
+							{
+								text: 'Exams',
+								pathName: '/exams',
+								link: '/exams'
+							}
+						]}
+					/>
 				</div>
 				{isOpen ? (
 					<div className='sidebar-wrapper-mob'>
-						<Sidebar setIsOpen={() => setIsOpen(false)} />
+						<Sidebar
+							setIsOpen={() => setIsOpen(false)}
+							routes={[
+								{
+									text: 'Dashboard',
+									pathName: '/auth',
+									link: '/auth'
+								},
+								{
+									text: 'Login',
+									pathName: '/login',
+									link: 'login'
+								},
+								{
+									text: 'Exams',
+									pathName: '/exams',
+									link: '/exams'
+								}
+							]}
+						/>
 					</div>
 				) : (
 					''

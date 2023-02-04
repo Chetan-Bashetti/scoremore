@@ -14,9 +14,9 @@ const Header: React.FC<Props> = ({ setIsOpen, isOpen }) => {
 	return (
 		<div className='header-wrapper'>
 			<div className='header-page-info'>
-				{location.pathname === '/'
+				{location.pathname === '/auth'
 					? 'Dashboard'
-					: location.pathname.split('/')[1]}
+					: location.pathname.split('/auth')[1]}
 			</div>
 			<div className='header-icon-holder'>
 				{isOpen ? (

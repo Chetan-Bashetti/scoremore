@@ -1,0 +1,13 @@
+.not-found-wrapper {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.basic-header {
+	color: var(--main-primary-color) !important;
+	font-weight: 600;
+	font-size: 3em;
+}
