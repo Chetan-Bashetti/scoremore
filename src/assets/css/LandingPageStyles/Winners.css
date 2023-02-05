@@ -26,6 +26,7 @@
 	box-shadow: 0 0px 0 rgb(0 0 0 / 10%), 0 0 16px rgb(0 0 0 / 10%);
 	border: 3px solid coral;
 	padding: 5px;
+	object-fit: cover;
 }
 .winner-image-sub {
 	height: 90px;
@@ -34,6 +35,7 @@
 	box-shadow: 0 0px 0 rgb(0 0 0 / 10%), 0 0 16px rgb(0 0 0 / 10%);
 	border: 2px solid coral;
 	padding: 5px;
+	object-fit: cover;
 }
 .winner-prizing {
 	display: flex;

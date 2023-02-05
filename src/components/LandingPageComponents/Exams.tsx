@@ -5,24 +5,28 @@ import { Link } from 'react-router-dom';
 
 const exams = [
 	{
+		examId: '123asdhkh123kh123',
 		thumb: 'gk.jpeg',
 		title: 'General knowladge',
 		prize: '1200',
 		desc: 'Includes general knowladge questions'
 	},
 	{
+		examId: '123asdhk6666h123kh123',
 		thumb: 'it.webp',
 		title: 'Information technology',
 		prize: '1200',
 		desc: 'Includes general knowladge questions'
 	},
 	{
+		examId: '123asdhk132h123kh123',
 		thumb: 'history.jpeg',
 		title: 'General knowladge',
 		prize: '1200',
 		desc: 'Includes general knowladge questions'
 	},
 	{
+		examId: '123asdhkhqqqqsdf123kh123',
 		thumb: 'ca.webp',
 		title: 'Current affairs',
 		prize: '1200',
@@ -33,10 +37,12 @@ const exams = [
 const Exams = () => {
 	return (
 		<div className='exams-main'>
-			<HeadingText text='Exams' />
+			<div style={{ margin: '2em 0' }}>
+				<HeadingText text='Exams' />
+			</div>
 			<div className='exams-list'>
-				{exams.map((eachExam, id) => (
-					<div className='exam' key={id}>
+				{exams.map((eachExam) => (
+					<div className='exam' key={eachExam.examId}>
 						<img
 							src={require(`../../assets/images/${eachExam.thumb}`)}
 							alt={eachExam.title}
@@ -47,7 +53,7 @@ const Exams = () => {
 							<div className='exam-fees'>₹ {eachExam.prize}/- </div>
 						</div>
 						<div className='exam-desc'>{eachExam.desc}</div>
-						<Link to='/'>
+						<Link to={`/auth/exam/${eachExam.examId}`}>
 							<Button
 								type='primary'
 								className='auth-btn'

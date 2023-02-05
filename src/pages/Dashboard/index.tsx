@@ -8,8 +8,8 @@ const Signup = React.lazy(() => import('../Signup/index'));
 const Kpis = React.lazy(() => import('../Kpis/index'));
 const Exams = React.lazy(() => import('../Exam/index'));
 const LandingPage = React.lazy(() => import('../LandingPage/index'));
-
-const Loading = () => <p>Loading ...</p>;
+const ExamPage = React.lazy(() => import('../ExamPage/index'));
+const Loading = React.lazy(() => import('../../components/Loading/index'));
 const Dashboard = () => {
 	return (
 		<React.Suspense fallback={<Loading />}>
@@ -17,6 +17,7 @@ const Dashboard = () => {
 				<Route path='/auth' element={<Home />}>
 					<Route index element={<Kpis />} />
 					<Route path='exams' element={<Exams />} />
+					<Route path='exam/:id' element={<ExamPage />} />
 				</Route>
 				<Route path='/' element={<LandingPage />} />
 				<Route path='/login' element={<Login />} />

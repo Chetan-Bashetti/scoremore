@@ -57,7 +57,9 @@ const winners = [
 const Winners = () => {
 	return (
 		<div className='winners-main'>
-			<HeadingText text='Winners' />
+			<div style={{ margin: '2em 0' }}>
+				<HeadingText text='Winners' />
+			</div>
 			<div className='winners-list'>
 				{winners.slice(0, 3).map((eacWinner, id) => (
 					<div className='winner' key={id}>

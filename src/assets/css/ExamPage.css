@@ -1,0 +1,110 @@
+.exam-page-main {
+	display: flex;
+	flex: 1;
+	padding: 1em;
+	flex-direction: column;
+}
+.exam-details-wrapper {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+.exam {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+}
+.exam-details {
+	display: flex;
+	flex: 1;
+}
+.exam-thum-image {
+	width: 300px;
+}
+.exam-title-info {
+	display: flex;
+	flex-direction: column;
+	margin-left: 1em;
+	justify-content: space-between;
+}
+.exam-title {
+	font-size: 2em;
+	font-weight: 600;
+}
+
+.exam-timer {
+	font-size: 1em;
+	display: flex;
+	background: #1777ffde;
+	color: white;
+	padding: 0.4em 0;
+	box-shadow: 0 2px 7px rgb(0 0 0 / 53%), 0 0px 16px rgb(130 33 33 / 0%);
+}
+
+.exam-actions {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1em;
+	align-items: center;
+}
+.each-ticker {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 0.3em;
+	width: 30px;
+}
+
+.ticker {
+	font-size: 1em;
+}
+.ticker-label {
+	font-size: 0.6em;
+}
+
+.ticker-saperate {
+	margin-top: 0.3em;
+}
+
+.exam-desc {
+	margin-top: 1em;
+	font-size: 0.8em;
+}
+
+@media screen and (max-width: 799px) {
+	.exam-details {
+		flex-direction: column;
+	}
+	.exam-title-info {
+		margin-left: 0px;
+		margin-top: 1em;
+	}
+	.instructions-wrapper {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 399px) {
+	.exam-actions {
+		flex-direction: column;
+	}
+	.exam-thum-image {
+		width: 100%;
+	}
+	.exam-timer {
+		margin-bottom: 1em;
+	}
+	.instructions-wrapper {
+		width: 100%;
+	}
+}
+.instructions {
+	margin-top: 2em;
+}
+
+@media screen and (min-width: 800px) {
+	.instructions-wrapper {
+		width: 50%;
+		margin: auto;
+	}
+}

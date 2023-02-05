@@ -23,9 +23,9 @@ const LandingHeader: React.FC<Props> = ({ setIsOpen }) => {
 				</div>
 			</div>
 			<div className='banner-content'>
-				<HeadingText text="India's most trusted" />
-				<HeadingText text='online examination' />
-				<HeadingText text='platform' />
+				<HeadingText text="India's most trusted" bold={true} />
+				<HeadingText text='online examination' bold={true} />
+				<HeadingText text='platform' bold={true} />
 				<span className='banner-sub-heading'>
 					Conducting affordable and quality examination all over India.
 				</span>

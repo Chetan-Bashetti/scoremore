@@ -14,6 +14,12 @@ const Winners = React.lazy(
 const LeaderBoard = React.lazy(
 	() => import('../../components/LandingPageComponents/LeaderBoard')
 );
+const Footer = React.lazy(
+	() => import('../../components/LandingPageComponents/Footer')
+);
+const COntactus = React.lazy(
+	() => import('../../components/LandingPageComponents/Contactus')
+);
 
 const LandingPage = () => {
 	const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -59,6 +65,8 @@ const LandingPage = () => {
 				<Cources />
 				<Winners />
 				<LeaderBoard />
+				<COntactus />
+				<Footer />
 			</div>
 		</div>
 	);

@@ -1,0 +1,39 @@
+.contact-us-main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3em 0;
+	flex-direction: column;
+}
+
+.message-input {
+	height: 50px;
+	width: 400px;
+}
+.send-button {
+	height: 50px;
+	background: #1d90ff;
+	width: 120px;
+	font-size: 1.2em;
+	margin-left: 0.5em;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.form-wrapper {
+	width: 90%;
+	display: flex;
+	justify-content: center;
+}
+
+@media screen and (max-width: 699px) {
+	.message-input {
+		width: 100%;
+	}
+	.form-wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+	.send-button {
+		margin-top: 1em;
+	}
+}

@@ -6,7 +6,7 @@
 }
 
 .leader-board-heading {
-	margin-top: 1em;
+	margin: 2em 0;
 }
 
 .leader-board-wrapper {
@@ -43,13 +43,13 @@
 }
 
 .rank {
-	background: linear-gradient(132deg, #000428, #004e92);
+	background: linear-gradient(0deg, #fcfcfc, #158ef8);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	color: white;
 	font-weight: 700;
-	width: 450px;
+	width: 350px;
 	font-size: 3em;
 	margin-top: 0.2em;
 }
@@ -57,5 +57,6 @@
 @media screen and (min-width: 999px) {
 	.leader-board-wrapper {
 		min-width: 999px;
+		justify-content: center;
 	}
 }

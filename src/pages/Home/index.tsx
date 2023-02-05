@@ -8,6 +8,7 @@ import '../../assets/css/Home.css';
 
 const Exam = React.lazy(() => import('../Exam/index'));
 const Kpis = React.lazy(() => import('../Kpis/index'));
+const ExamPage = React.lazy(() => import('../ExamPage/index'));
 
 const Loading = () => <p>Loading ...</p>;
 const Home = () => {
@@ -15,27 +16,7 @@ const Home = () => {
 	return (
 		<React.Suspense fallback={<Loading />}>
 			<div className='home-wrapper'>
-				<div className='sidebar-wrapper'>
-					<Sidebar
-						routes={[
-							{
-								text: 'Dashboard',
-								pathName: '/auth',
-								link: '/auth'
-							},
-							{
-								text: 'Login',
-								pathName: '/login',
-								link: 'login'
-							},
-							{
-								text: 'Exams',
-								pathName: '/exams',
-								link: '/exams'
-							}
-						]}
-					/>
-				</div>
+				<div className='sidebar-wrapper'></div>
 				{isOpen ? (
 					<div className='sidebar-wrapper-mob'>
 						<Sidebar
@@ -70,6 +51,7 @@ const Home = () => {
 						<Routes>
 							<Route path='/' element={<Kpis />} />
 							<Route path='/exams' element={<Exam />} />
+							<Route path='/exam/:id' element={<ExamPage />} />
 						</Routes>
 					</div>
 				</div>
