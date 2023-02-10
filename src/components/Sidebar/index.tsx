@@ -19,6 +19,9 @@ interface Props {
 
 const Sidebar: React.FC<Props> = ({ setIsOpen, mode, routes }) => {
 	const location = useLocation();
+
+	console.log(routes, 'exam-component');
+
 	return (
 		<div
 			className='sidebar-container'
@@ -38,6 +41,7 @@ const Sidebar: React.FC<Props> = ({ setIsOpen, mode, routes }) => {
 							location.pathname === eachLink.pathName ? 'route active' : 'route'
 						}
 						onClick={() => setIsOpen && setIsOpen()}
+						key={id}
 					>
 						<CustomLink
 							link={eachLink.link}

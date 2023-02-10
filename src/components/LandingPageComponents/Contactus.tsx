@@ -18,7 +18,7 @@ const Contactus = () => {
 	};
 
 	return (
-		<div className='contact-us-main'>
+		<div className='contact-us-main' id='landing-contact-us'>
 			<div style={{ margin: '2em 0' }}>
 				<HeadingText text='Conatct us' />
 			</div>

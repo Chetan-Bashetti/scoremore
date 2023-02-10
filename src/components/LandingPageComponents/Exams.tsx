@@ -36,13 +36,13 @@ const exams = [
 
 const Exams = () => {
 	return (
-		<div className='exams-main'>
+		<div className='exams-main' id='landing-exams'>
 			<div style={{ margin: '2em 0' }}>
 				<HeadingText text='Exams' />
 			</div>
 			<div className='exams-list'>
 				{exams.map((eachExam) => (
-					<div className='exam' key={eachExam.examId}>
+					<div className='exam-component' key={eachExam.examId}>
 						<img
 							src={require(`../../assets/images/${eachExam.thumb}`)}
 							alt={eachExam.title}

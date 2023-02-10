@@ -30,7 +30,7 @@ const Home = () => {
 								{
 									text: 'Login',
 									pathName: '/login',
-									link: 'login'
+									link: '/login'
 								},
 								{
 									text: 'Exams',

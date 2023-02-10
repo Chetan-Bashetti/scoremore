@@ -28,7 +28,7 @@ const Signup: React.FC = () => {
 					prefix={<UnlockOutlined />}
 					type='password'
 				/>
-				<Link to='/'>
+				<Link to='/auth'>
 					<Button type='primary' className='auth-btn'>
 						Login
 					</Button>
