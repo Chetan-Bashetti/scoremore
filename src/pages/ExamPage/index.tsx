@@ -3,6 +3,7 @@ import { Button } from 'antd';
 // import { useParams } from 'react-router-dom';
 import '../../assets/css/ExamPage.css';
 import { PlayCircleOutlined } from '@ant-design/icons';
+import Loading from '../../components/Loading';
 
 const ExamPage = () => {
 	const [days, setDays] = React.useState<string>('');
@@ -10,10 +11,12 @@ const ExamPage = () => {
 	const [minutes, setMinutes] = React.useState<string>('');
 	const [seconds, setSeconds] = React.useState<string>('');
 	const [isTimer, setTimer] = React.useState<boolean>(false);
+	const [loader, setLoader] = React.useState(false);
 	// const { id } = useParams();
 
 	React.useEffect(() => {
-		var countDownDate = new Date('Feb 8, 2023 22:00:00').getTime();
+		setLoader(true);
+		var countDownDate = new Date('Feb 15, 2023 22:00:00').getTime();
 
 		// Update the count down every 1 second
 		var timer = setInterval(function () {
@@ -45,11 +48,13 @@ const ExamPage = () => {
 				setMinutes(checkIsSingleVal(totalMinutes));
 				setSeconds(checkIsSingleVal(totalSeconds));
 				setTimer(true);
+				setLoader(false);
 			}
 			// If the count down is over, write some text
 			if (distance < 0) {
 				clearInterval(timer);
 				setTimer(false);
+				setLoader(false);
 			}
 		}, 1000);
 		return () => {
@@ -64,7 +69,9 @@ const ExamPage = () => {
 			return val.toString();
 		}
 	};
-	return (
+	return loader ? (
+		<Loading />
+	) : (
 		<div className='exam-page-main'>
 			<div className='exam-details-wrapper'>
 				<div className='exam'>
@@ -115,7 +122,7 @@ const ExamPage = () => {
 											</div>
 										</div>
 									) : (
-										<div>write the exa</div>
+										<div></div>
 									)}
 								</div>
 								<div>
