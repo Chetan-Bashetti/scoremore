@@ -2,11 +2,7 @@ import React from 'react';
 import { Button } from 'antd';
 // import { useParams } from 'react-router-dom';
 import '../../assets/css/ExamPage.css';
-import {
-	PlayCircleOutlined,
-	InfoCircleOutlined,
-	CloseCircleOutlined
-} from '@ant-design/icons';
+import { PlayCircleOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import Loading from '../../components/Loading';
 import Instructions from '../../components/Instructions';
 
