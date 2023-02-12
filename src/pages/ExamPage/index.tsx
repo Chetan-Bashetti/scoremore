@@ -155,11 +155,8 @@ const ExamPage = () => {
 			<div className='inst-wrap'>
 				{isInfoVisisble ? <Instructions /> : ''}
 				<div className='inst-actions'>
-					{!isInfoVisisble ? (
-						<div className='inst-text'>Please read the instructions here</div>
-					) : (
-						''
-					)}
+					<div className='inst-text'>Instructions</div>
+
 					<Button
 						className='info-button'
 						onMouseOver={() => setIsInfoVisible(true)}
