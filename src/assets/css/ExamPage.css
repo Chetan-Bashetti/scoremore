@@ -28,8 +28,9 @@
 	justify-content: space-between;
 }
 .exam-title {
-	font-size: 2em;
+	font-size: 1.2em;
 	font-weight: 600;
+	margin-bottom: 1em;
 }
 
 .exam-timer {
@@ -43,9 +44,7 @@
 
 .exam-actions {
 	display: flex;
-	justify-content: space-between;
 	margin-top: 1em;
-	align-items: center;
 }
 .each-ticker {
 	display: flex;
@@ -71,6 +70,70 @@
 	font-size: 0.8em;
 }
 
+.exam-calander {
+	font-size: 0.8em;
+	margin: 0.1em 0;
+	background: #3e89ff;
+	color: white;
+	padding: 0.4em;
+	border-top-right-radius: 0.5em;
+	border-top-left-radius: 0.5em;
+	text-align: center;
+}
+.exam-button-actions {
+	margin-left: 1em;
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+.exam-button-info {
+	display: flex;
+	color: #3e89ff;
+	font-size: 1em;
+	margin-bottom: 0.2em;
+}
+
+.exam-note {
+	font-size: 0.6em;
+	margin-left: 0.3em;
+}
+
+.inst-wrap {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.info-button {
+	background: #3e89ff;
+	color: white;
+	height: auto;
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+	font-size: 1.5em;
+	padding: 0;
+}
+.info-button:hover {
+	background: #3e89ff;
+	color: white !important;
+}
+.inst-actions {
+	display: flex;
+	align-items: center;
+}
+.inst-text {
+	font-size: 0.7em;
+	color: #3e89ff;
+	padding: 0.3em 1em;
+	font-weight: 600;
+	border-radius: 1em;
+}
+
 @media screen and (max-width: 799px) {
 	.exam-details {
 		flex-direction: column;
@@ -87,6 +150,7 @@
 @media screen and (max-width: 399px) {
 	.exam-actions {
 		flex-direction: column;
+		align-items: center;
 	}
 	.exam-thum-image {
 		width: 100%;
@@ -97,14 +161,24 @@
 	.instructions-wrapper {
 		width: 100%;
 	}
-}
-.instructions {
-	margin-top: 2em;
+	.exam-button-actions {
+		margin-left: 0em;
+	}
 }
 
-@media screen and (min-width: 800px) {
-	.instructions-wrapper {
-		width: 50%;
-		margin: auto;
+.instructions-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1em;
+	border-radius: 2%;
+	margin-bottom: 1em;
+	box-shadow: 0 2px 7px rgb(0 0 0 / 10%), 0 0px 16px rgb(0 0 0 / 10%);
+	background: white;
+}
+
+@media screen and (max-width: 899px) {
+	.inst-wrap {
+		width: 90%;
 	}
 }
