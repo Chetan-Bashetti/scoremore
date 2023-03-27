@@ -1,10 +1,13 @@
 import React from 'react';
 import { Button } from 'antd';
-// import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import { useParams } from 'react-router-dom';
 import '../../assets/css/ExamPage.css';
 import { PlayCircleOutlined, InfoCircleOutlined } from '@ant-design/icons';
 import Loading from '../../components/Loading';
 import Instructions from '../../components/Instructions';
+
+const configValue: string = process.env.RAZORPAY_API_KEY as string;
 
 const ExamPage = () => {
 	const [days, setDays] = React.useState<string>('');
@@ -14,7 +17,7 @@ const ExamPage = () => {
 	const [isTimer, setTimer] = React.useState<boolean>(false);
 	const [loader, setLoader] = React.useState(false);
 	const [isInfoVisisble, setIsInfoVisible] = React.useState(false);
-	// const { id } = useParams();
+	const { id } = useParams();
 
 	React.useEffect(() => {
 		setLoader(true);
@@ -71,6 +74,50 @@ const ExamPage = () => {
 			return val.toString();
 		}
 	};
+
+	const chekoutHandler = async (amount: number) => {
+		let {
+			data: { orderDetails }
+		} = await axios.post('http://localhost:8080/api/checkout', {
+			amount: amount
+		});
+		console.log(orderDetails);
+
+		const options = {
+			key_id: configValue, // Enter the Key ID generated from the Dashboard
+			amount: orderDetails.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+			currency: 'INR',
+			name: 'Chetan Bashetti',
+			description: 'Test Transaction',
+			image:
+				'https://avatars.githubusercontent.com/u/61494015?s=400&u=20edbd01dbd904f9b856b045443ba6d695a7c996&v=4',
+			order_id: orderDetails.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+			handler: (response: object) => {
+				console.log(response, 'respones');
+				axios.post('http://localhost:8080/api/makePayment', {
+					data: { ...response, exam_id: id }
+				});
+			},
+			hidden: {
+				contact: false,
+				email: true
+			},
+			prefill: {
+				name: 'Chetan Bashetti',
+				email: 'chetankb619@gmail.com',
+				contact: '8495011619'
+			},
+			notes: {
+				address: 'Tecnacy Office'
+			},
+			theme: {
+				color: '#172570'
+			}
+		};
+		var rzp1 = new window.Razorpay(options);
+		rzp1.open();
+	};
+
 	return loader ? (
 		<Loading />
 	) : (
@@ -135,9 +182,10 @@ const ExamPage = () => {
 										type='primary'
 										disabled={isTimer}
 										style={{ height: '65%' }}
+										onClick={() => chekoutHandler(1)}
 									>
 										<PlayCircleOutlined />
-										Start the test
+										Paynow
 									</Button>
 									<div className='exam-button-info'>
 										<InfoCircleOutlined style={{ fontSize: '0.6em' }} />
