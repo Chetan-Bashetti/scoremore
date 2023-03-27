@@ -8,6 +8,7 @@ import Loading from '../../components/Loading';
 import Instructions from '../../components/Instructions';
 
 const configValue: string = process.env.RAZORPAY_API_KEY as string;
+const API_PORT = '192.168.1.18';
 
 const ExamPage = () => {
 	const [days, setDays] = React.useState<string>('');
@@ -76,46 +77,48 @@ const ExamPage = () => {
 	};
 
 	const chekoutHandler = async (amount: number) => {
-		let {
-			data: { orderDetails }
-		} = await axios.post('http://localhost:8080/api/checkout', {
-			amount: amount
-		});
-		console.log(orderDetails);
-
-		const options = {
-			key_id: configValue, // Enter the Key ID generated from the Dashboard
-			amount: orderDetails.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-			currency: 'INR',
-			name: 'Chetan Bashetti',
-			description: 'Test Transaction',
-			image:
-				'https://avatars.githubusercontent.com/u/61494015?s=400&u=20edbd01dbd904f9b856b045443ba6d695a7c996&v=4',
-			order_id: orderDetails.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-			handler: (response: object) => {
-				console.log(response, 'respones');
-				axios.post('http://localhost:8080/api/makePayment', {
-					data: { ...response, exam_id: id }
-				});
-			},
-			hidden: {
-				contact: false,
-				email: true
-			},
-			prefill: {
+		try {
+			let {
+				data: { orderDetails }
+			} = await axios.post(`http://${API_PORT}:8080/api/checkout`, {
+				amount: amount
+			});
+			alert(amount);
+			const options = {
+				key_id: configValue, // Enter the Key ID generated from the Dashboard
+				amount: orderDetails.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+				currency: 'INR',
 				name: 'Chetan Bashetti',
-				email: 'chetankb619@gmail.com',
-				contact: '8495011619'
-			},
-			notes: {
-				address: 'Tecnacy Office'
-			},
-			theme: {
-				color: '#172570'
-			}
-		};
-		var rzp1 = new window.Razorpay(options);
-		rzp1.open();
+				description: 'Test Transaction',
+				image:
+					'https://avatars.githubusercontent.com/u/61494015?s=400&u=20edbd01dbd904f9b856b045443ba6d695a7c996&v=4',
+				order_id: orderDetails.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+				handler: (response: object) => {
+					axios.post(`http://${API_PORT}:8080/api/makePayment`, {
+						data: { ...response, exam_id: id }
+					});
+				},
+				hidden: {
+					contact: false,
+					email: true
+				},
+				prefill: {
+					name: 'Chetan Bashetti',
+					email: 'chetankb619@gmail.com',
+					contact: '8495011619'
+				},
+				notes: {
+					address: 'Tecnacy Office'
+				},
+				theme: {
+					color: '#172570'
+				}
+			};
+			var rzp1 = new window.Razorpay(options);
+			rzp1.open();
+		} catch (err: any) {
+			console.log(err.response.data);
+		}
 	};
 
 	return loader ? (
