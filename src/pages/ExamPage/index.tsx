@@ -10,7 +10,7 @@ import Instructions from '../../components/Instructions';
 import '../../assets/css/Home.css';
 
 const configValue: string = process.env.RAZORPAY_API_KEY as string;
-const API_PORT = '192.168.1.4';
+const API_PORT = '192.168.1.6';
 
 type Exam = {
 	userId: string;
