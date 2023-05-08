@@ -11,7 +11,6 @@ interface Props {
 
 const Header: React.FC<Props> = ({ setIsOpen, isOpen }) => {
 	const {
-		isLoggedIn,
 		userData
 	}: {
 		isLoggedIn: boolean;
