@@ -20,8 +20,6 @@ interface Props {
 const Sidebar: React.FC<Props> = ({ setIsOpen, mode, routes }) => {
 	const location = useLocation();
 
-	console.log(routes, 'exam-component');
-
 	return (
 		<div
 			className='sidebar-container'

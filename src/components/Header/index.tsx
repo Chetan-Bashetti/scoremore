@@ -2,6 +2,7 @@ import React from 'react';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
 import '../../assets/css/Header.css';
+import useIsLoggedIn from '../../hooks/useIsLoggedIn';
 
 interface Props {
 	setIsOpen: Function;
@@ -9,6 +10,14 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ setIsOpen, isOpen }) => {
+	const {
+		isLoggedIn,
+		userData
+	}: {
+		isLoggedIn: boolean;
+		userData: any;
+	} = useIsLoggedIn();
+
 	return (
 		<div className='header-wrapper'>
 			<div className='header-icon-holder'>
@@ -32,7 +41,7 @@ const Header: React.FC<Props> = ({ setIsOpen, isOpen }) => {
 				/>
 				<div className='user-greetings'>
 					<div>
-						Welcome, <span className='user-name'>Chetan</span>
+						Welcome, <span className='user-name'>{userData.userName}</span>
 					</div>
 				</div>
 			</div>

@@ -68,6 +68,7 @@
 .exam-desc {
 	margin-top: 1em;
 	font-size: 0.8em;
+	flex: 1;
 }
 
 .exam-calander {

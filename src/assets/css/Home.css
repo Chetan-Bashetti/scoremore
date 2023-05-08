@@ -36,3 +36,18 @@
 		box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
 	}
 }
+
+.login-warning {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.warning-text {
+	font-size: 2em;
+	margin: 1em 35px;
+	text-align: center;
+	color: coral;
+}
