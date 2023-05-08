@@ -97,7 +97,7 @@ const Signup: React.FC = () => {
 
 		if (isValid) {
 			try {
-				let res = await axios.post('http://localhost:8080/user/register', {
+				await axios.post('http://localhost:8080/user/register', {
 					userName: name,
 					email,
 					phone,
